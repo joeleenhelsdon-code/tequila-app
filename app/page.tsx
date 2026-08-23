@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useAuth } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useAuth } from "@clerk/clerk-react";
 
 type Bottle = { id:string; brand:string; name:string; type:string; abv:number; nom:string; region:string; country:string; score:number; ratings:number; additive:"Independent verification"|"Producer declared"|"Not disclosed"; notes:string[]; process:string; image:string; imageSource:string };
 const bottles:Bottle[] = [
