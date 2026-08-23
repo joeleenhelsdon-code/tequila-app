@@ -1,4 +1,5 @@
 import { eq } from "drizzle-orm";
+import { verifyToken } from "@clerk/backend";
 import { getDb } from "../../../db";
 import { passportStates } from "../../../db/schema";
 
@@ -6,8 +7,25 @@ function safeArray(value: unknown, max: number) {
   return Array.isArray(value) ? value.slice(0, max) : [];
 }
 
+async function storageId(request: Request, fallbackClientId?: string) {
+  const authorization = request.headers.get("authorization");
+  const token = authorization?.startsWith("Bearer ") ? authorization.slice(7) : null;
+  if (token) {
+    const secretKey = process.env.CLERK_SECRET_KEY;
+    if (!secretKey) throw new Error("CLERK_SECRET_KEY is not configured");
+    try {
+      const verified = await verifyToken(token, { secretKey });
+      return `clerk:${verified.sub}`;
+    } catch {
+      return null;
+    }
+  }
+  return fallbackClientId?.trim().slice(0, 100) || null;
+}
+
 export async function GET(request: Request) {
-  const clientId = new URL(request.url).searchParams.get("clientId")?.slice(0, 100);
+  const fallbackClientId = new URL(request.url).searchParams.get("clientId") ?? undefined;
+  const clientId = await storageId(request, fallbackClientId);
   if (!clientId) return Response.json({ error: "clientId required" }, { status: 400 });
   const rows = await getDb().select().from(passportStates).where(eq(passportStates.clientId, clientId)).limit(1);
   if (!rows[0]) return Response.json({ shelf: [], tastings: [] });
@@ -16,7 +34,7 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   const body = await request.json() as { clientId?: string; shelf?: unknown; tastings?: unknown };
-  const clientId = body.clientId?.trim().slice(0, 100);
+  const clientId = await storageId(request, body.clientId);
   if (!clientId) return Response.json({ error: "clientId required" }, { status: 400 });
   const shelf = safeArray(body.shelf, 500);
   const tastings = safeArray(body.tastings, 500);

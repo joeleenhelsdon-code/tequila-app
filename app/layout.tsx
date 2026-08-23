@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TequilaFiClerkProvider from "./clerk-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,7 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <TequilaFiClerkProvider>
+          {children}
+        </TequilaFiClerkProvider>
+      </body>
     </html>
   );
 }
