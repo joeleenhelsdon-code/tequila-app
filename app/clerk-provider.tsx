@@ -1,6 +1,6 @@
 "use client";
 
-import { ClerkProvider } from "@clerk/clerk-react";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export default function TequilaFiClerkProvider({ children }: { children: React.ReactNode }) {
   return (
