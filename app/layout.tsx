@@ -53,6 +53,7 @@ const structuredData = {
       url: "https://www.tequilafi.com/",
       name: "TequilaFi",
       description: "A global tequila discovery, tasting journal and collection app.",
+      sameAs: ["https://www.youtube.com/@tequilafi"],
     },
     {
       "@type": "WebApplication",
