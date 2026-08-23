@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tequilify.com"),
-  title: "Tequilify",
+  metadataBase: new URL("https://tequilafi.com"),
+  title: "TequilaFi",
   description: "Discover how tequila was made, remember what you loved, and build your global agave passport.",
   openGraph: {
-    title: "Tequilify",
+    title: "TequilaFi",
     description: "Know what you're drinking. Build your global tequila passport.",
-    images: [{ url: "https://tequilish.fcbzzqm7dr.chatgpt.site/og.png", width: 1731, height: 908, alt: "Tequilify" }],
+    images: [{ url: "https://tequilish.fcbzzqm7dr.chatgpt.site/og.png", width: 1731, height: 908, alt: "TequilaFi" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tequilify",
+    title: "TequilaFi",
     description: "Know what you're drinking. Build your global tequila passport.",
     images: ["https://tequilish.fcbzzqm7dr.chatgpt.site/og.png"],
   },
