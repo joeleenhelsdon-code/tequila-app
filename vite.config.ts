@@ -15,7 +15,6 @@ export default defineConfig(async () => {
         inspectorPort: false,
         config: {
           main: "./worker/index.ts",
-          compatibility_flags: ["nodejs_compat"],
           d1_databases: [{
             binding: "DB",
             database_name: "tequilafi-db",
