@@ -42,8 +42,8 @@ const bottles: Bottle[] = [
     additive: "Independent verification",
     notes: ["Cooked agave", "Black pepper", "Mineral"],
     process: "Stone/brick oven · Tahona & roller mill · Copper pot",
-    image: "https://tequilish.fcbzzqm7dr.chatgpt.site/products/g4-108.png",
-    imageSource: "https://pkgdgroup.com/g4-tequila-blanco-high-proof",
+    image: "/products/g4-108.webp",
+    imageSource: "TequilaFi collection photograph",
   },
   {
     id: "mijenta-blanco",
