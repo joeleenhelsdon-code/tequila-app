@@ -1,0 +1,16 @@
+export const additiveFreeBrands = [
+  "3 Amigos", "Aguasol", "Alma del Jaguar", "Amatiteña", "ArteNOM Selección de 1123",
+  "ArteNOM Selección de 1146", "ArteNOM Selección de 1414", "ArteNOM Selección de 1579",
+  "Arette", "Atanasio", "Azuñia", "Carrera Tequila", "Casa Real", "Cascahuín", "Cazcanes",
+  "Chamucos", "Cierto", "Cimarron", "Codigo 1530", "Corrido", "Cuernito", "De-Nada Tequila",
+  "Don Fulano", "Don Lorenzo", "Don Vicente", "El Bandido Yankee", "El Gran Legado de Vida",
+  "El Mexicano", "El Rey", "El Tequileño", "El Tesoro de Don Felipe", "Elvelo", "Espero Blanco",
+  "Fortaleza", "Fuenteseca", "G4", "González 1939", "Gran Dovejo", "Hijole!", "Inspiro",
+  "Insólito", "La Pulga", "Lagrimas Del Valle", "Lalo", "Lapis", "Loco", "Los Abuelos",
+  "Los Dos", "Mala Vida", "Mijenta", "Montagave", "Nueveuno", "Paladar", "Partida", "Pasote",
+  "PM Spirits Tequila", "Primo 1861", "Purasangre", "Santo Fino", "Siembra Valles",
+  "Siempre Tequila", "Siete Leguas", "Suave Tequila", "t1 Tequila Uno", "Tanteo Blanco", "Tapatio",
+  "Tau", "TCapri Tequila", "Tears of Llorona", "Tequila General Gorostieta", "Tequila Ocho",
+  "Terralta", "Tepozan", "Tres Agaves", "Tres Cuatro Cinco", "Viva Mexico", "Volans",
+  "Volcan de Mi Tierra", "Wild Common", "Yeyo",
+] as const;

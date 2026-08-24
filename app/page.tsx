@@ -252,7 +252,6 @@ const bottles: Bottle[] = [
     imageSource: "TequilaFi collection photograph",
   },
 ];
-
 const tasteOptions = [
   "Cooked agave",
   "Citrus",
@@ -722,6 +721,18 @@ export default function Home() {
                   </article>
                 ))}
               </div>
+              <section className="guide-promo">
+                <div className="guide-promo-mark">80</div>
+                <div>
+                  <p className="eyebrow">NEW BETA RESOURCE</p>
+                  <h2>Additive-Free Tequila Guide</h2>
+                  <p>
+                    Explore 80 brands from the independent on-site verification
+                    programme, with a free printable guide.
+                  </p>
+                </div>
+                <a href="/guides/additive-free-tequila">Explore the guide →</a>
+              </section>
               <section className="passport-strip">
                 <div>
                   <span className="passport-icon">◎</span>
