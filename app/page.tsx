@@ -77,7 +77,7 @@ const bottles: Bottle[] = [
     additive: "Producer declared",
     notes: ["Red fruit", "Citrus", "Soft agave"],
     process: "French white oak Cabernet casks · Unrested base",
-    image: "/products/codigo-1530-rosa.png",
+    image: "/products/codigo-1530-rosa.webp",
     imageSource: "TequilaFi collection photograph",
   },
   {
@@ -111,7 +111,7 @@ const bottles: Bottle[] = [
     additive: "Independent verification",
     notes: ["Dark chocolate", "Dried fruit", "Agave"],
     process: "Five years · Scotch, sherry & brandy casks",
-    image: "/products/tears-of-llorona-extra-anejo.png",
+    image: "/products/tears-of-llorona-extra-anejo.webp",
     imageSource: "TequilaFi collection photograph",
   },
   {
@@ -147,7 +147,7 @@ const bottles: Bottle[] = [
     additive: "Producer declared",
     notes: ["Cooked agave", "Oak", "Vanilla"],
     process: "Aged in Napa Cabernet French white oak barrels",
-    image: "/products/codigo-1530-anejo.png",
+    image: "/products/codigo-1530-anejo.webp",
     imageSource: "TequilaFi collection photograph",
   },
   {
@@ -164,7 +164,7 @@ const bottles: Bottle[] = [
     additive: "Independent verification",
     notes: ["Cooked agave", "Light oak", "Spice"],
     process: "Traditional masonry oven · Copper pot · Oak rested",
-    image: "/products/t1-reposado-excepcional.png",
+    image: "/products/t1-reposado-excepcional.webp",
     imageSource: "TequilaFi collection photograph",
   },
   {
@@ -181,7 +181,7 @@ const bottles: Bottle[] = [
     additive: "Independent verification",
     notes: ["Cooked agave", "Caramel", "Oak"],
     process: "Traditional masonry oven · Copper pot · Extended oak ageing",
-    image: "/products/t1-anejo-estelar.png",
+    image: "/products/t1-anejo-estelar.webp",
     imageSource: "TequilaFi collection photograph",
   },
   {
@@ -198,7 +198,7 @@ const bottles: Bottle[] = [
     additive: "Independent verification",
     notes: ["Cooked agave", "Citrus", "Olive brine"],
     process: "Brick oven · Tahona · Copper pot",
-    image: "/products/fortaleza-blanco.png",
+    image: "/products/fortaleza-blanco.webp",
     imageSource: "TequilaFi collection photograph",
   },
   {
@@ -215,7 +215,7 @@ const bottles: Bottle[] = [
     additive: "Independent verification",
     notes: ["Cooked agave", "Butter", "Light oak"],
     process: "Brick oven · Tahona · Copper pot · American oak",
-    image: "/products/fortaleza-reposado.png",
+    image: "/products/fortaleza-reposado.webp",
     imageSource: "TequilaFi collection photograph",
   },
   {
@@ -232,7 +232,7 @@ const bottles: Bottle[] = [
     additive: "Independent verification",
     notes: ["Cooked agave", "Toffee", "Oak"],
     process: "Brick oven · Tahona · Copper pot · American oak",
-    image: "/products/fortaleza-anejo.png",
+    image: "/products/fortaleza-anejo.webp",
     imageSource: "TequilaFi collection photograph",
   },
   {
@@ -249,7 +249,7 @@ const bottles: Bottle[] = [
     additive: "Independent verification",
     notes: ["Cooked agave", "Pepper", "Citrus"],
     process: "Brick oven · Roller mill · Copper pot",
-    image: "/products/tapatio-blanco.png",
+    image: "/products/tapatio-blanco.webp",
     imageSource: "TequilaFi collection photograph",
   },
 ];
