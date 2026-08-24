@@ -59,9 +59,8 @@ const bottles: Bottle[] = [
     additive: "Independent verification",
     notes: ["Floral", "Citrus", "Cooked agave"],
     process: "Brick oven · Roller mill · Stainless & copper",
-    image:
-      "https://tequilish.fcbzzqm7dr.chatgpt.site/products/mijenta-blanco.jpg",
-    imageSource: "https://mijenta-tequila.com/products/mijenta-blanco",
+    image: "/products/mijenta-blanco.webp",
+    imageSource: "TequilaFi collection photograph",
   },
   {
     id: "codigo-1530",
