@@ -584,6 +584,7 @@ export default function Home() {
     ["discover", "Discover", "✦"],
     ["search", "Search", "⌕"],
     ["rankings", "Rankings", "★"],
+    ["guides", "Guides", "▣"],
     ["taste", "Taste", "◒"],
     ["book", "Book tasting", "◇"],
     ["shelf", "My Shelf", "▥"],
@@ -634,7 +635,11 @@ export default function Home() {
               <button
                 key={id}
                 className={tab === id ? "active" : ""}
-                onClick={() => setTab(id)}
+                onClick={() =>
+                  id === "guides"
+                    ? (window.location.href = "/guides/additive-free-tequila")
+                    : setTab(id)
+                }
               >
                 <i>{icon}</i>
                 <span>{label}</span>
@@ -1554,7 +1559,11 @@ export default function Home() {
           <button
             key={id}
             className={tab === id ? "active" : ""}
-            onClick={() => setTab(id)}
+            onClick={() =>
+              id === "guides"
+                ? (window.location.href = "/guides/additive-free-tequila")
+                : setTab(id)
+            }
           >
             <i>{icon}</i>
             <span>{label}</span>
