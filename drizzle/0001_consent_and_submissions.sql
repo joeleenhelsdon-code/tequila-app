@@ -7,6 +7,15 @@ CREATE TABLE IF NOT EXISTS `user_consents` (
   `marketing_opt_in` integer DEFAULT false NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS `consent_email_events` (
+  `event_key` text PRIMARY KEY NOT NULL,
+  `user_id` text NOT NULL,
+  `terms_version` text NOT NULL,
+  `privacy_version` text NOT NULL,
+  `provider_message_id` text,
+  `sent_at` text NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS `bottle_submissions` (
   `id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
   `user_id` text NOT NULL,

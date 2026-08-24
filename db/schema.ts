@@ -17,6 +17,15 @@ export const userConsents = sqliteTable("user_consents", {
   marketingOptIn: integer("marketing_opt_in", { mode: "boolean" }).notNull().default(false),
 });
 
+export const consentEmailEvents = sqliteTable("consent_email_events", {
+  eventKey: text("event_key").primaryKey(),
+  userId: text("user_id").notNull(),
+  termsVersion: text("terms_version").notNull(),
+  privacyVersion: text("privacy_version").notNull(),
+  providerMessageId: text("provider_message_id"),
+  sentAt: text("sent_at").notNull(),
+});
+
 export const bottleSubmissions = sqliteTable("bottle_submissions", {
   id: integer("id").primaryKey({ autoIncrement: true }),
   userId: text("user_id").notNull(),
