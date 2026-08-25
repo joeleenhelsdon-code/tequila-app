@@ -61,7 +61,20 @@ async function sendConsentEmail(userId: string, acceptedAt: string) {
       html:`<div style="font-family:Arial,sans-serif;line-height:1.6;color:#0b1f3a;max-width:640px;margin:auto"><h1>TequilaFi</h1><p>${greeting}</p><p>This confirms that you accepted the TequilaFi Terms of Use and acknowledged the Privacy Notice on <strong>${escapeHtml(new Date(acceptedAt).toUTCString())}</strong>.</p><h2>Terms of Use — version ${TERMS_VERSION}</h2><p>You must be legally old enough to consume alcohol in your country. TequilaFi provides educational and community information, not medical advice or a guarantee about any product.</p><p>You are responsible for your account and anything you submit. Do not upload unlawful, misleading or infringing material. Bottle submissions are reviewed and may be edited, rejected or removed.</p><p>You keep ownership of your content. When you submit bottle information, photographs or notes, you grant TequilaFi a worldwide, non-exclusive, royalty-free licence to store, reproduce, adapt, publish and display that content for operating and promoting TequilaFi.</p><h2>Privacy Notice — version ${PRIVACY_VERSION}</h2><p>TequilaFi uses your Clerk account details, shelf and tasting records, bottle submissions, consent records and basic technical or security logs to provide and secure the service. Clerk provides authentication and Cloudflare provides hosting and database services.</p><p>Marketing email is optional and requires separate consent. You can request access, correction or deletion by replying to this email or contacting <a href="mailto:joeleen@thejoeleeneffect.co.za">joeleen@thejoeleeneffect.co.za</a>.</p><p><a href="https://www.tequilafi.com" style="display:inline-block;background:#c9a54c;color:#0b1f3a;padding:12px 20px;text-decoration:none;font-weight:bold;border-radius:8px">Open TequilaFi</a></p><p style="font-size:12px;color:#52606d">Keep this email for your records.</p></div>`,
     }),
   });
-  if (!response.ok) return { sent:false, reason:"delivery_failed" } as const;
+  if (!response.ok) {
+    const providerError = await response.json().catch(() => null) as {
+      message?: string;
+      name?: string;
+    } | null;
+    const detail = providerError?.message?.slice(0, 240)
+      ?? `Resend rejected the request (HTTP ${response.status})`;
+    console.error("Resend delivery failed", {
+      status: response.status,
+      name: providerError?.name,
+      detail,
+    });
+    return { sent:false, reason:"delivery_failed", detail } as const;
+  }
   const result = await response.json() as { id?:string };
   await getDb().insert(consentEmailEvents).values({ eventKey, userId, termsVersion:TERMS_VERSION, privacyVersion:PRIVACY_VERSION, providerMessageId:result.id ?? null, sentAt:new Date().toISOString() }).onConflictDoNothing();
   return { sent:true } as const;
