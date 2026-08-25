@@ -1,5 +1,6 @@
 import { eq, sql } from "drizzle-orm";
 import { verifyToken } from "@clerk/backend";
+import { env } from "cloudflare:workers";
 import { getDb } from "../../../db";
 import { consentEmailEvents, userConsents } from "../../../db/schema";
 
@@ -9,7 +10,8 @@ const PRIVACY_VERSION = "2026-08-24";
 async function userId(request: Request) {
   const authorization = request.headers.get("authorization");
   const token = authorization?.startsWith("Bearer ") ? authorization.slice(7) : null;
-  const secretKey = process.env.CLERK_SECRET_KEY;
+  const runtimeEnv = env as unknown as Record<string, string | undefined>;
+  const secretKey = runtimeEnv.CLERK_SECRET_KEY;
   if (!token || !secretKey) return null;
   try { return (await verifyToken(token, { secretKey })).sub; } catch { return null; }
 }
@@ -24,9 +26,10 @@ function escapeHtml(value: string) {
 }
 
 async function sendConsentEmail(userId: string, acceptedAt: string) {
-  const secretKey = process.env.CLERK_SECRET_KEY;
-  const resendKey = process.env.RESEND_API_KEY;
-  const from = process.env.RESEND_FROM_EMAIL ?? "TequilaFi <hello@tequilafi.com>";
+  const runtimeEnv = env as unknown as Record<string, string | undefined>;
+  const secretKey = runtimeEnv.CLERK_SECRET_KEY;
+  const resendKey = runtimeEnv.RESEND_API_KEY;
+  const from = runtimeEnv.RESEND_FROM_EMAIL ?? "TequilaFi <hello@tequilafi.com>";
   if (!secretKey || !resendKey) return { sent:false, reason:"not_configured" } as const;
 
   const eventKey = `${userId}:${TERMS_VERSION}:${PRIVACY_VERSION}`;
