@@ -735,6 +735,10 @@ export default function Home() {
                           <em key={n}>{n}</em>
                         ))}
                       </div>
+                      <div className="card-pairing">
+                        <span>PAIR IT WITH</span>
+                        <b>{b.pairing.dish}</b>
+                      </div>
                     </div>
                   </article>
                 ))}
