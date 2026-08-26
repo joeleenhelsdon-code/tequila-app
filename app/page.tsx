@@ -810,7 +810,7 @@ export default function Home() {
                 <button onClick={() => setTab("search")}>View all →</button>
               </div>
               <div className="bottle-grid">
-                {bottles.slice(0, 4).map((b) => (
+                {bottles.slice(0, 6).map((b) => (
                   <article
                     className="bottle-card"
                     key={b.id}
