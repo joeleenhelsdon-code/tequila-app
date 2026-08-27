@@ -1,5 +1,7 @@
 "use client";
 
+// Deployment sync marker: additive-status banners and Código correction.
+
 import { useEffect, useMemo, useState } from "react";
 import {
   SignedIn,
