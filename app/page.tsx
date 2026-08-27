@@ -400,6 +400,14 @@ function BottleArt({
 }) {
   return (
     <div className={`bottle-art ${large ? "large" : ""}`}>
+      {bottle.additive !== "Independent verification" && (
+        <div
+          className="additive-warning-banner"
+          aria-label="Not certified additive-free"
+        >
+          Not certified additive-free
+        </div>
+      )}
       <img
         src={bottle.image}
         alt={`${bottle.brand} ${bottle.name} official product bottle`}
