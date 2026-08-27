@@ -140,6 +140,24 @@ const bottles: Bottle[] = [
     imageSource: "TequilaFi collection photograph",
   },
   {
+    id: "insolito-anejo",
+    brand: "Insólito",
+    name: "Añejo",
+    type: "Añejo",
+    abv: 40,
+    nom: "1558",
+    region: "Mazamitla, Jalisco",
+    country: "Mexico",
+    score: 86,
+    ratings: 472,
+    additive: "Independent verification",
+    notes: ["Chocolate", "Toasted nuts", "Dried fruit"],
+    process: "80% Highland / 20% Lowland agave · Low-pressure autoclave · Roller mill · Double distilled · 18–24 months in new American oak",
+    pairing: { dish: "Dark chocolate and toasted almonds", why: "Bittersweet chocolate and roasted nuts mirror the añejo's cocoa and nutty oak notes, while dried fruit brings out its cherry and caramel depth.", alternatives: ["Fig tart", "Aged Gouda"] },
+    image: "/products/insolito-anejo.webp",
+    imageSource: "TequilaFi collection photograph",
+  },
+  {
     id: "g4-108",
     brand: "G4",
     name: "Blanco 108",
@@ -820,7 +838,7 @@ export default function Home() {
                 <button onClick={() => setTab("search")}>View all →</button>
               </div>
               <div className="bottle-grid">
-                {bottles.slice(0, 6).map((b) => (
+                {bottles.slice(0, 7).map((b) => (
                   <article
                     className="bottle-card"
                     key={b.id}
