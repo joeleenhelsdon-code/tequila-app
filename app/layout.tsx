@@ -30,17 +30,18 @@ export const metadata: Metadata = {
     siteName: "TequilaFi",
     title: "TequilaFi — Discover, Taste and Track Tequila",
     description: "Know what you're drinking. Build your global tequila passport.",
-    images: [{ url: "https://tequilish.fcbzzqm7dr.chatgpt.site/og.png", width: 1731, height: 908, alt: "TequilaFi" }],
+    images: [{ url: "/brand/tequilafi-gold-logo.jpg", width: 1080, height: 360, alt: "Tequilafi gold and navy agave logo" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "TequilaFi — Discover, Taste and Track Tequila",
     description: "Know what you're drinking. Build your global tequila passport.",
-    images: ["https://tequilish.fcbzzqm7dr.chatgpt.site/og.png"],
+    images: ["https://www.tequilafi.com/brand/tequilafi-gold-logo.jpg"],
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: [{ url: "/brand/tequilafi-favicon.png", sizes: "64x64", type: "image/png" }],
+    shortcut: "/brand/tequilafi-favicon.png",
+    apple: [{ url: "/brand/tequilafi-apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 

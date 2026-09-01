@@ -23,13 +23,16 @@ export default function TequilaFiClerkProvider({ children }: { children: ReactNo
   if (!publishableKey) {
     return (
       <main style={{ minHeight: "100vh", display: "grid", placeItems: "center", fontFamily: "system-ui", background: "#f7f3ea", color: "#17382c" }}>
-        <p>{failed ? "TequilaFi login is being configured. Please refresh shortly." : "Opening TequilaFi…"}</p>
+        <div style={{ textAlign: "center" }}>
+          <img src="/brand/tequilafi-gold-logo.jpg" alt="Tequilafi" width={240} height={80} style={{ display: "block", margin: "0 auto 20px", borderRadius: 8 }} />
+          <p>{failed ? "TequilaFi login is being configured. Please refresh shortly." : "Opening TequilaFi…"}</p>
+        </div>
       </main>
     );
   }
 
   return (
-    <ClerkProvider publishableKey={publishableKey}>
+    <ClerkProvider publishableKey={publishableKey} appearance={{ layout: { logoImageUrl: "/brand/tequilafi-gold-logo.jpg", logoLinkUrl: "/" } }}>
       {children}
     </ClerkProvider>
   );

@@ -13,7 +13,7 @@ export default function AdditiveFreeTequilaGuide() {
   return (
     <main className="guide-page">
       <nav className="guide-nav">
-        <Link href="/">✺ TEQUILAFI</Link>
+        <Link href="/" aria-label="Tequilafi home"><img className="brand-logo" src="/brand/tequilafi-gold-logo.jpg" alt="Tequilafi" width={180} height={60} /></Link>
         <span>BETA RESOURCE</span>
       </nav>
       <header className="guide-hero">
