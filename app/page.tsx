@@ -744,9 +744,8 @@ export default function Home() {
     <main>
       <header className="topbar">
         <button className="brand" onClick={() => setTab("discover")}>
-          <span className="agave-mark">✺</span>
+          <img className="brand-logo" src="/brand/tequilafi-gold-logo.jpg" alt="Tequilafi" width={180} height={60} />
           <span className="brand-name">
-            <b>TEQUILAFI</b>
             <em>BETA</em>
           </span>
         </button>
@@ -919,7 +918,7 @@ export default function Home() {
                         }
                         key={s}
                       >
-                        ✺<small>{s}</small>
+                        <img className="brand-emblem" src="/brand/tequilafi-apple-icon.png" alt="" width={32} height={32} /><small>{s}</small>
                       </span>
                     ),
                   )}
@@ -1210,8 +1209,7 @@ export default function Home() {
                   </p>
                 </div>
                 <span className="booking-seal">
-                  TEQUILAFI
-                  <br />
+                  <img className="brand-emblem" src="/brand/tequilafi-apple-icon.png" alt="Tequilafi" width={48} height={48} />
                   <b>TASTINGS</b>
                 </span>
               </div>
@@ -1421,7 +1419,7 @@ export default function Home() {
                 </section>
                 <section className="next-stamp">
                   <p className="eyebrow">NEXT STAMP</p>
-                  <span className="big-stamp">✺</span>
+                  <span className="big-stamp"><img className="brand-emblem" src="/brand/tequilafi-apple-icon.png" alt="Tequilafi agave stamp" width={80} height={80} /></span>
                   <h2>Agave Explorer</h2>
                   <p>Add five bottles to your shelf.</p>
                   <div className="progress">
@@ -1831,7 +1829,7 @@ export default function Home() {
       {needsConsent && (
         <div className="modal-backdrop consent-backdrop">
           <article className="consent-modal">
-            <span className="agave-mark">✺</span>
+            <img className="brand-logo" src="/brand/tequilafi-gold-logo.jpg" alt="Tequilafi" width={210} height={70} />
             <p className="eyebrow">WELCOME TO THE TEQUILAFI BETA</p>
             <h1>One clear agreement before you continue</h1>
             <p>
